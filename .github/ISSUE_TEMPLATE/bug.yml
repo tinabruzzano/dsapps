@@ -1,0 +1,75 @@
+name: Bug / Crash Report
+description: Segnala un bug o un crash in DomePrograms
+title: "[BUG] "
+labels:
+  - bug
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Grazie per aver segnalato un problema in DomePrograms!
+
+  - type: input
+    id: page
+    attributes:
+      label: Pagina interessata
+      placeholder: es. Home, Store, Ricerca, Pagina App
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrizione del bug
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Come riprodurre il problema
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamento atteso
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Comportamento attuale
+    validations:
+      required: true
+
+  - type: textarea
+    id: console
+    attributes:
+      label: Errori Console / Log
+      render: shell
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshot
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Chrome
+        - Edge
+        - Firefox
+        - Safari
+        - Altro
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Informazioni aggiuntive
+      
