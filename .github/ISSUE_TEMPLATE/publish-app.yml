@@ -1,0 +1,63 @@
+name: Publish App
+description: Richiedi la pubblicazione di una nuova app su DomePrograms
+title: "[PUBLISH] "
+labels:
+  - publish
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Prima di pubblicare, assicurati che l’app rispetti le linee guida di DomePrograms.
+
+  - type: input
+    id: app_name
+    attributes:
+      label: Nome app
+      placeholder: Es. My Cool App
+    validations:
+      required: true
+
+  - type: textarea
+    id: short_description
+    attributes:
+      label: Descrizione breve
+      placeholder: Una descrizione breve dell’app
+    validations:
+      required: true
+
+  - type: textarea
+    id: long_description
+    attributes:
+      label: Descrizione lunga (Markdown supportato)
+      description: Puoi usare Markdown per formattare il testo
+    validations:
+      required: true
+
+  - type: textarea
+    id: data_collected
+    attributes:
+      label: Quali dati raccoglie l’app?
+      description: |
+        Indica tutti i dati raccolti dall’app (se presenti).  
+        Consulta anche l’informativa sulla privacy: https://demenigeco.github.io/dsapps/service/it/informativa-della-privacy
+      placeholder: Es. email, nessun dato, statistiche anonime...
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Versione da pubblicare
+      placeholder: Es. v1.0.0
+    validations:
+      required: true
+
+  - type: input
+    id: zip_link
+    attributes:
+      label: Link alla ZIP del programma
+      description: Inserisci un link diretto al file .zip dell’app
+      placeholder: https://...
+    validations:
+      required: true
