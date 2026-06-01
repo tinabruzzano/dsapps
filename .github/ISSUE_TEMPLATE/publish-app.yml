@@ -3,6 +3,7 @@ description: Richiedi la pubblicazione di una nuova app su DomePrograms
 title: "[PUBLISH] "
 labels:
   - publish
+  - apps
 
 body:
   - type: markdown
