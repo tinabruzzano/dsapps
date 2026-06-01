@@ -1,0 +1,22 @@
+[
+    {
+        "stars": 5,
+        "id": 0,
+        "title": "Fantastico!",
+        "description": "velocissimo e completo. Lo uso ogni giorno, super consigliato!"
+    },
+
+    {
+        "stars": 4,
+        "id": 1,
+        "title": "Ottimo",
+        "description": "L'app è davvero ben fatta, ma a volte si blocca. Spero in un aggiornamento!"
+    },
+
+    {
+        "stars": 3,
+        "id": 2,
+        "title": "Buono ma con qualche bug",
+        "description": "L'app è molto utile, ma ho riscontrato alcuni bug che spero vengano risolti presto."
+    }
+]
