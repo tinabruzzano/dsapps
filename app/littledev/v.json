@@ -1,0 +1,31 @@
+[
+    {
+        "stars": 5,
+        "id": 0,
+        "title": "Fantastico!",
+        "description": "velocissimo e completo. Lo uso ogni giorno, super consigliato!"
+    },
+    {
+        "stars": 4,
+        "id": 1,
+        "title": "Molto Buono",
+        "description": "Mi piace molto, è leggero e facile da usare, ma alcune funzionalità avanzate potrebbero essere migliorate."
+    },
+
+    {
+        "stars": 4,
+        "id": 2,
+        "title": "E' Molto migliorato",
+        "description": "Nella versione 2.0 ci sono stati passi da gigante ma ci sono delle imperfezioni, come ad esempio Ferdor AI che non va oppure siti fe:// che implodono nella pagina corrente tranne nelle nuove schede."
+    },
+
+        {
+        "stars": 2,
+        "id": 3,
+        "title": "Non ci voleva proprio!",
+        "description": "Con la 2.0 che non riesco a fare i download! nella 1.0 Andava! E poi nella 2.0 anno aggiunto un certo qComponentPlugin che secondo me non SERVE A NIENTE! Risolvete!!",
+        "response":"Nella 3.0 abbiamo sistemato le crtitiche e qComponentPlugin è una libreria che fa funzionare molti addon e flags."
+    }
+
+    
+]

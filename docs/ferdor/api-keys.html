@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ - API Ferdor AI</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #0f172a;
+    color: #e2e8f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.box {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 15px;
+    width: 420px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.question {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.answer {
+    color: #cbd5f5;
+    margin-bottom: 20px;
+}
+
+/* API */
+.api-box {
+    background: #0f172a;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: monospace;
+    word-break: break-all;
+    margin-bottom: 10px;
+}
+
+button {
+    background: #3b82f6;
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background: #2563eb;
+}
+
+.copy {
+    margin-top: 10px;
+    background: #10b981;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>🔑 API Ferdor AI</h2>
+
+    <div class="question">
+        Come ottengo una chiave API?
+    </div>
+
+    <div class="answer">
+        Puoi generare una chiave API per usare Ferdor AI per attivare un codice personalizzato per Ferdor AI.
+    </div>
+
+      <div class="question">
+        Come imposto una API Key in Ferdor Browser?
+    </div>
+
+    <div class="answer">
+        Una volta generato, apri Ferdor Browser e su una nuova scheda digita nella barra URL fe://settings. Poi nel campo "Search Engine API Key (Ferdor AI)" cancella tutto e incolla la chiave.
+    </div>
+
+    <div class="question">
+        Qual è il motore di ricerca di queste API Keys?
+    </div>
+
+    <div class="answer">
+        Visto che Ferdor AI Usa API, solitamente è DuckDuckGo, Google non ha API.
+    </div>
+
+    <h2>Genera API</h2>
+    <div class="api-box" id="apiKey">
+        Clicca "Genera API Key" per ottenere una chiave
+    </div>
+
+    <button onclick="generateKey()">⚡ Genera API Key</button>
+    <button class="copy" onclick="copyKey()">📋 Copia</button>
+</div>
+
+<script>
+function generateKey() {
+    let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-";
+    let key = "ferdorai-";
+
+    for (let i = 0; i < 32; i++) {
+        key += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+
+    document.getElementById("apiKey").innerText = key;
+}
+
+function copyKey() {
+    let text = document.getElementById("apiKey").innerText;
+    navigator.clipboard.writeText(text);
+    alert("Copiato!");
+}
+</script>
+
+</body>
+</html>

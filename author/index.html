@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autori - DomePrograms</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #111827;
+    color: white;
+}
+
+header {
+    text-align: center;
+    padding: 30px;
+    background: #1f2937;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.author {
+    display: block;
+    background: #1f2937;
+    padding: 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.author:hover {
+    transform: scale(1.05);
+    background: #374151;
+}
+
+.handle {
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+.badge {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background: #10b981;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>👨‍💻 Autori</h1>
+    <p>Scopri tutti i creatori su DomePrograms</p>
+</header>
+
+<div class="container">
+    <div class="grid">
+
+        <!-- Autore -->
+        <a href="@dsapps" class="author">
+            <h2>DomePrograms Apps</h2>
+            <div class="handle">@dsapps</div>
+            <div class="badge">✅ Verificato</div>
+        </a>
+
+    </div>
+</div>
+
+</body>
+</html>

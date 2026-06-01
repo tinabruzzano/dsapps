@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Fare Addon per Ferdor</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 { font-size: 28px; }
+h2 { font-size: 22px; }
+h6 { font-size: 14px; margin-top: 20px; }
+
+pre {
+    background: #1e1e1e;
+    color: #fff;
+    padding: 15px;
+    overflow-x: auto;
+    border-radius: 8px;
+    position: relative;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #4CAF50;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+    user-select: none;
+}
+
+.copy-btn:hover {
+    background: #45a049;
+}
+
+code {
+    background: #eee;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+blockquote {
+    background: #f5f5f5;
+    padding: 10px;
+    border-left: 5px solid #ccc;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Fare Addon per Ferdor e Ferdor Beta</h1>
+
+<blockquote>Questa FAQ è dedicata a sviluppatori di addons.</blockquote>
+
+<p><strong>Ecco come Fare Addons per Ferdor e Ferdor Beta.</strong></p>
+
+<h2>Procedimento</h2>
+
+<h6>Fai la cartella</h6>
+<p>
+Crea una cartella del nome che vuoi, ad esempio <code>my-extension</code>.
+Consigliamo nomi memorabili e corti, perché sarà il <strong>Nome in codice dell'estensione</strong>
+</p>
+
+<h6>File <code>INFORMATION</code></h6>
+
+<pre><button class="copy-btn">Copia</button>
+meta {author {"tuonome"}; prod {"La Mia Estensione"};}
+build {prod.build {aa.numeroversione}}
+superusr {enabled {False}}
+setuptools {actived {False}}
+</pre>
+
+<h6>File <code>SETUP</code></h6>
+
+<pre><button class="copy-btn">Copia</button>
+file {
+    dir:{th.thisuserwithferdor + "my-extension.plu" #Sostituisci 'my-extension' con il nome in codice    
+    }
+}
+</pre>
+
+<h6>File ADDON</h6>
+È un binario dinamico. Incollate i seguenti binari:
+<pre><button class="copy-btn">Copia</button>
+50 6C 67 8A F3 21 9C 4D 7B C2 D4 19 8E 55 3A C7 0F B2 6D 91
+A1 3F 77 C8 92 4B 0D E6 11 5A 9C 73 2E B4 F0 6A 88 12 4D AF 39 C1 7E 55 90 2B DC 61 08 F3 9A 47 5C E2 14 78 AB 6F 33 D0 9E 01 4A B7 C5 2D 88 F1 6C 90 3E 72 19 AD 5F C0 27 81 EA 44 68 B2 0F 95
+DA 23 7C 58 11 9F B6 2A E4 70 3B 8D 55 C1 06 AF 39 8B D2 14 7E 60 FA 21 95 3C 47 B8 0D 6A E1 2F 84 9D 33 C7 58 10 AB 6E 2C F4 71 09 D8 55 3A C1 EF 22 90 4B 7C 18 D3 A5 6F 39 80 B2 54 1E 68 CD 7A 11 93 5F E2 40 6C B8 2D A1 79 0F 33 D4 8E 56
+19 C7 2B 60 F5 84 3A 91 DE 08 77 4C B2 6F A9 15 C0 3D 88 21 6A 57 9E F4 0B D2 71 35 AC 68 19 E3 4F B9 2C 80 16 D5 73 AE 41 0F 9C 62 38 B7 E0 55 A2 6D 13 F8 4C 97 20 BE 5A 31 8D 64 0A F1 C3 7E
+8E 44 2A 91 B7 0C 5D E3 76 1F A9 38 C2 6B D0 54 19 87 3E F2 6D 0A B5 48 C9 21 7C E1 93 5A 6F B8 02 4D A7 39 85 CE 10 6B F4 2E 91 D8 57 3C A0 6E 11 F9 43 78 BC 25 D6 8A 0F 3D 72 99 14 E0 5B C7
+2D 88 F1 63 0B A4 79 35 CE 12 6F D8 54 91 3A B7 E2 0C 6D F5 48 23 9E 71 AC 0F 34 B9 65 D2 18 7A E4 50 2B 93 6C 1F A8 47 D5 0E 78 21 B3 9C 66 4A F0 1D 82 3E 57 AB 90 6D 24 C1 7F 38 55 E9 02
+71 3C D6 8F 20 A9 5B E4 18 63 C2 7D 91 4F B0 2A 8E 15 79 DC 34 6B A1 F8 52 0C 97 3E 6D B4 21 88 F3 5A 0E 69 17 C4 AD 32 90 7F E1 5C 26 B8 4D A3 10 6F 92 3B D7 58 0A C6 71 2E 85 4F B9 13 DC
+A1 3F 77 C8 92 4B 0D E6 11 5A 9C 73 2E B4 F0 6A 88 12 4D AF 39 C1 7E 55 90 2B DC 61 08 F3 9A 47 5C E2 14 78 AB 6F 33 D0 9E 01 4A B7 C5 2D 88 F1 6C 90 3E 72 19 AD 5F C0 27 81 EA 44 68 B2 0F 95
+DA 23 7C 58 11 9F B6 2A E4 70 3B 8D 55 C1 06 AF 39 8B D2 14 7E 60 FA 21 95 3C 47 B8 0D 6A E1 2F 84 9D 33 C7 58 10 AB 6E 2C F4 71 09 D8 55 3A C1 EF 22 90 4B 7C 18 D3 A5 6F 39 80 B2 54 1E 68 CD 7A 11 93 5F E2 40 6C B8 2D A1 79 0F 33 D4 8E 56
+19 C7 2B 60 F5 84 3A 91 DE 08 77 4C B2 6F A9 15 C0 3D 88 21 6A 57 9E F4 0B D2 71 35 AC 68 19 E3 4F B9 2C 80 16 D5 73 AE 41 0F 9C 62 38 B7 E0 55 A2 6D 13 F8 4C 97 20 BE 5A 31 8D 64 0A F1 C3 7E
+8E 44 2A 91 B7 0C 5D E3 76 1F A9 38 C2 6B D0 54 19 87 3E F2 6D 0A B5 48 C9 21 7C E1 93 5A 6F B8 02 4D A7 39 85 CE 10 6B F4 2E 91 D8 57 3C A0 6E 11 F9 43 78 BC 25 D6 8A 0F 3D 72 99 14 E0 5B C7
+2D 88 F1 63 0B A4 79 35 CE 12 6F D8 54 91 3A B7 E2 0C 6D F5 48 23 9E 71 AC 0F 34 B9 65 D2 18 7A E4 50 2B 93 6C 1F A8 47 D5 0E 78 21 B3 9C 66 4A F0 1D 82 3E 57 AB 90 6D 24 C1 7F 38 55 E9 02
+71 3C D6 8F 20 A9 5B E4 18 63 C2 7D 91 4F B0 2A 8E 15 79 DC 34 6B A1 F8 52 0C 97 3E 6D B4 21 88 F3 5A 0E 69 17 C4 AD 32 90 7F E1 5C 26 B8 4D A3 10 6F 92 3B D7 58 0A C6 71 2E 85 4F B9 13 DC
+A1 3F 77 C8 92 4B 0D E6 11 5A 9C 73 2E B4 F0 6A 88 12 4D AF 39 C1 7E 55 90 2B DC 61 08 F3 9A 47 5C E2 14 78 AB 6F 33 D0 9E 01 4A B7 C5 2D 88 F1 6C 90 3E 72 19 AD 5F C0 27 81 EA 44 68 B2 0F 95
+DA 23 7C 58 11 9F B6 2A E4 70 3B 8D 55 C1 06 AF 39 8B D2 14 7E 60 FA 21 95 3C 47 B8 0D 6A E1 2F 84 9D 33 C7 58 10 AB 6E 2C F4 71 09 D8 55 3A C1 EF 22 90 4B 7C 18 D3 A5 6F 39 80 B2 54 1E 68 CD 7A 11 93 5F E2 40 6C B8 2D A1 79 0F 33 D4 8E 56
+19 C7 2B 60 F5 84 3A 91 DE 08 77 4C B2 6F A9 15 C0 3D 88 21 6A 57 9E F4 0B D2 71 35 AC 68 19 E3 4F B9 2C 80 16 D5 73 AE 41 0F 9C 62 38 B7 E0 55 A2 6D 13 F8 4C 97 20 BE 5A 31 8D 64 0A F1 C3 7E
+8E 44 2A 91 B7 0C 5D E3 76 1F A9 38 C2 6B D0 54 19 87 3E F2 6D 0A B5 48 C9 21 7C E1 93 5A 6F B8 02 4D A7 39 85 CE 10 6B F4 2E 91 D8 57 3C A0 6E 11 F9 43 78 BC 25 D6 8A 0F 3D 72 99 14 E0 5B C7
+2D 88 F1 63 0B A4 79 35 CE 12 6F D8 54 91 3A B7 E2 0C 6D F5 48 23 9E 71 AC 0F 34 B9 65 D2 18 7A E4 50 2B 93 6C 1F A8 47 D5 0E 78 21 B3 9C 66 4A F0 1D 82 3E 57 AB 90 6D 24 C1 7F 38 55 E9 02
+71 3C D6 8F 20 A9 5B E4 18 63 C2 7D 91 4F B0 2A 8E 15 79 DC 34 6B A1 F8 52 0C 97 3E 6D B4 21 88 F3 5A 0E 69 17 C4 AD 32 90 7F E1 5C 26 B8 4D A3 10 6F 92 3B D7 58 0A C6 71 2E 85 4F B9 13 DC
+</pre>
+
+<h6>Impachettazione</h6>
+
+<p>
+Ora selezionate tutto il contenuto della cartella con <code>CTRL-A</code> (o su MacOS <code>COMMAND-A</code>)
+poi comprimi in ZIP e rinomina:
+</p>
+
+<pre><button class="copy-btn">Copia</button>
+nome-in-codice.plu
+</pre>
+
+<h6>Invio</h6>
+
+<p>
+<a href="mailto:dome.nigeco+ferdorext@gmail.com?subject=Estensione%20Ferdor:%20Nome">
+Cliccando Qui
+</a>
+</p>
+
+<ul>
+<li><strong>Ricorda:</strong>
+    <ul>
+        <li>Allega il file fatto</li>
+        <li>Sostituisci "Nome"</li>
+    </ul>
+</li>
+
+<li><strong>Rispetta:</strong>
+    <ul>
+        <li>Non devi fare contenuti pericolosi</li>
+        <li>Se violi la regola l'Addon non verrà messo</li>
+    </ul>
+</li>
+
+<li><strong>Tieni a mente:</strong>
+    <ul>
+        <li>Potrebbe volerci qualche ora/giorno</li>
+    </ul>
+</li>
+</ul>
+
+<script>
+document.querySelectorAll(".copy-btn").forEach(button => {
+    button.addEventListener("click", () => {
+
+        const pre = button.parentElement;
+
+        // Clona il pre per rimuovere il bottone dal testo copiato
+        const clone = pre.cloneNode(true);
+        clone.querySelector("button").remove();
+
+        const code = clone.innerText.trim();
+
+        navigator.clipboard.writeText(code);
+
+        button.innerText = "Copiato!";
+        setTimeout(() => button.innerText = "Copia", 2000);
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Fare Addon per Ferdor</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 { font-size: 28px; }
+h2 { font-size: 22px; }
+h6 { font-size: 14px; margin-top: 20px; }
+
+pre {
+    background: #1e1e1e;
+    color: #fff;
+    padding: 15px;
+    overflow-x: auto;
+    border-radius: 8px;
+    position: relative;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #4CAF50;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+    user-select: none;
+}
+
+.copy-btn:hover {
+    background: #45a049;
+}
+
+code {
+    background: #eee;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+blockquote {
+    background: #f5f5f5;
+    padding: 10px;
+    border-left: 5px solid #ccc;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Fare Addon per Ferdor e Ferdor Beta</h1>
+
+<blockquote>Questa FAQ è dedicata a sviluppatori di addons.</blockquote>
+
+<p><strong>Ecco come Fare Addons per Ferdor e Ferdor Beta.</strong></p>
+
+<h2>Guida E++</h2>
+
+<blockquote>E++ è un linguaggio avanzato per addon Ferdor.</blockquote>
+
+<p>
+E++ viene usato in file <code>ADDON-EPP</code> per creare logiche avanzate:
+</p>
+
+<ul>
+<li>Automazioni</li>
+<li>Moduli</li>
+<li>Eventi</li>
+<li>Controllo interno</li>
+</ul>
+
+<p>
+<a href="how-to-plu.html">
+<strong>Guarda anche: Fare Addon per Ferdor e Ferdor Beta</strong>
+</a>
+</p>
+
+<h6>Struttura base</h6>
+
+<pre><button class="copy-btn">Copia</button>
+\ E++ File.Name "base"
+\ File includemdl &lt;basestudio&gt;, &lt;eppinit&gt;
+
+&lt;eppinit&gt;.InitMdl[this]
+</pre>
+
+<h2>Esempi</h2>
+
+<h6>Esempio 1</h6>
+<pre><button class="copy-btn">Copia</button>
+\ E++ File.Name "hello"
+\ File includemdl &lt;basestudio&gt;, &lt;eppinit&gt;
+
+print "Hello"
+
+&lt;eppinit&gt;.InitMdl[this]
+</pre>
+
+<h6>Esempio 2</h6>
+<pre><button class="copy-btn">Copia</button>
+\ E++ File.Name "math"
+\ File includemdl &lt;basestudio&gt;, &lt;eppinit&gt;
+
+var a = 5
+var b = 3
+print a + b
+
+&lt;eppinit&gt;.InitMdl[this]
+</pre>
+
+<h6>Esempio 3</h6>
+<pre><button class="copy-btn">Copia</button>
+\ E++ File.Name "if"
+\ File includemdl &lt;basestudio&gt;, &lt;eppinit&gt;
+
+if 1 == 1 {
+ print "ok"
+}
+
+&lt;eppinit&gt;.InitMdl[this]
+</pre>
+
+<h6>Esempio 4</h6>
+<pre><button class="copy-btn">Copia</button>
+\ E++ File.Name "loop"
+\ File includemdl &lt;basestudio&gt;, &lt;eppinit&gt;
+
+for i in 0..3 {
+ print i
+}
+
+&lt;eppinit&gt;.InitMdl[this]
+</pre>
+
+<h6>Esempio 5</h6>
+<pre><button class="copy-btn">Copia</button>
+\ E++ File.Name "func"
+\ File includemdl &lt;basestudio&gt;, &lt;eppinit&gt;
+
+func hi(n) {
+ print n
+}
+
+hi("Dev")
+
+&lt;eppinit&gt;.InitMdl[this]
+</pre>
+
+<h6>Esempio 6</h6>
+<pre><button class="copy-btn">Copia</button>
+\ E++ File.Name "file"
+\ File includemdl &lt;basestudio&gt;, &lt;eppinit&gt;
+
+file.create "a.txt"
+
+&lt;eppinit&gt;.InitMdl[this]
+</pre>
+
+<h6>Esempio 7</h6>
+<pre><button class="copy-btn">Copia</button>
+\ E++ File.Name "event"
+\ File includemdl &lt;basestudio&gt;, &lt;eppinit&gt;
+
+event.start {
+ print "start"
+}
+
+&lt;eppinit&gt;.InitMdl[this]
+</pre>
+
+<h6>Esempio 8</h6>
+<pre><button class="copy-btn">Copia</button>
+\ E++ File.Name "module"
+\ File includemdl &lt;basestudio&gt;, &lt;eppinit&gt;
+
+module.load "core"
+
+&lt;eppinit&gt;.InitMdl[this]
+</pre>
+
+<h6>Esempio 9</h6>
+<pre><button class="copy-btn">Copia</button>
+\ E++ File.Name "input"
+\ File includemdl &lt;basestudio&gt;, &lt;eppinit&gt;
+
+var x = input "nome"
+print x
+
+&lt;eppinit&gt;.InitMdl[this]
+</pre>
+
+<h6>Esempio 10</h6>
+<pre><button class="copy-btn">Copia</button>
+\ E++ File.Name "debug"
+\ File includemdl &lt;basestudio&gt;, &lt;eppinit&gt;
+
+debug.log "ok"
+
+&lt;eppinit&gt;.InitMdl[this]
+</pre>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".copy-btn").forEach(button => {
+        button.addEventListener("click", () => {
+
+            const pre = button.parentElement;
+            const clone = pre.cloneNode(true);
+            clone.querySelector("button").remove();
+
+            const code = clone.innerText.trim();
+
+            navigator.clipboard.writeText(code);
+
+            button.innerText = "Copiato!";
+            setTimeout(() => button.innerText = "Copia", 2000);
+        });
+    });
+});
+</script>
+
+</body>
+</html>

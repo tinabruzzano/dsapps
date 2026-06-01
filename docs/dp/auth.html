@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ - Aiuto Account</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #0f172a;
+    color: #e2e8f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.box {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 15px;
+    width: 420px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.question {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.answer {
+    color: #cbd5f5;
+    margin-bottom: 20px;
+}
+
+/* API */
+.api-box {
+    background: #0f172a;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: monospace;
+    word-break: break-all;
+    margin-bottom: 10px;
+}
+
+button {
+    background: #3b82f6;
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background: #2563eb;
+}
+
+.copy {
+    margin-top: 10px;
+    background: #10b981;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>👤 Aiuto Account</h2>
+
+    <div class="question">
+        Come accedo?
+    </div>
+
+    <div class="answer">
+        Per accedere, vai alla homepage, clicca "Pagine" e poi "Centro Utente".
+        Dopo accedi o registrati con le tue credenziali.
+    </div>
+
+      <div class="question">
+        È obbligatorio avere un'account?
+    </div>
+
+    <div class="answer">
+        Non è obbligatorio avere un'account.
+    </div>
+
+    <div class="question">
+         Ho per sbaglio eliminato il mio account! Come faccio adesso?
+    </div>
+
+    <div class="answer">
+        Prima, niente panico.<br/>Prima, dovrebbe essere impossibile eliminare l'account involontariamente, perché richiede la password. Ma se l'hai fatto veramente, ricorda due cose:
+
+      <ul>
+        <li>Per confermare l'eliminazione, dovrai eliminare l'account da tutti i dispositivi connessi.</li>
+        <li>Se non elimini l'account da tutti i dispositivi in cui hai effettuato l'accesso, potrai ancora accedere con le tue credeziali, senza perdita di dati.</li>
+      </ul>
+      Comunque, se avevi un solo dispositivo con l'accesso, dovrai regsitrarti di nuovo.
+    </div>
+</div>
+
+<script>
+function generateKey() {
+    let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-";
+    let key = "ferdorai-";
+
+    for (let i = 0; i < 32; i++) {
+        key += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+
+    document.getElementById("apiKey").innerText = key;
+}
+
+function copyKey() {
+    let text = document.getElementById("apiKey").innerText;
+    navigator.clipboard.writeText(text);
+    alert("Copiato!");
+}
+</script>
+
+</body>
+</html>

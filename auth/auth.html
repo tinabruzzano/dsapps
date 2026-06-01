@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>DomePrograms Auth</title>
+
+<style>
+    body{
+        margin:0;
+        font-family: Arial, sans-serif;
+        background:#0f0f0f;
+        color:white;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+    }
+
+    .box{
+        background:#1a1a1a;
+        padding:30px;
+        border-radius:18px;
+        width:320px;
+        box-shadow:0 0 20px rgba(0,0,0,0.5);
+        border:2px solid #2d2d2d;
+    }
+
+    h1{
+        text-align:center;
+        color:#00a2ff;
+        margin-bottom:25px;
+    }
+
+    input{
+        width:100%;
+        padding:12px;
+        margin-bottom:12px;
+        border:none;
+        border-radius:10px;
+        background:#2b2b2b;
+        color:white;
+        outline:none;
+        box-sizing:border-box;
+    }
+
+    button{
+        width:100%;
+        padding:12px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        font-weight:bold;
+        margin-top:8px;
+        transition:0.2s;
+    }
+
+    .login{
+        background:#00a2ff;
+        color:white;
+    }
+
+    .register{
+        background:#2d2d2d;
+        color:white;
+    }
+
+    button:hover{
+        transform:scale(1.02);
+    }
+
+    #error{
+        color:#ff4b4b;
+        margin-top:12px;
+        text-align:center;
+        font-size:14px;
+    }
+</style>
+</head>
+<body>
+
+<div class="box">
+    <h1>DomePrograms</h1>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+
+    <button class="login" onclick="login()">Accedi</button>
+    <button class="register" onclick="registerUser()">Registrati</button>
+
+    <div id="error"></div>
+</div>
+
+<script>
+    const BLOCKED_LIST = [
+        "hacker",
+        "blockeduser"
+    ];
+
+    const params = new URLSearchParams(window.location.search);
+    const next = params.get("next") || "/";
+
+    function saveAuth(username, password){
+        localStorage.setItem("DSAPPSAuth", JSON.stringify({
+            username,
+            password
+        }));
+    }
+
+    function redirect(){
+        window.location.href = next;
+    }
+
+    function login(){
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const error = document.getElementById("error");
+
+        if(BLOCKED_LIST.includes(username.toLowerCase())){
+            error.innerText = "Il tuo utente è bloccato.";
+            return;
+        }
+
+        saveAuth(username, password);
+        redirect();
+    }
+
+    function registerUser(){
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        saveAuth(username, password);
+        redirect();
+    }
+</script>
+
+</body>
+</html>

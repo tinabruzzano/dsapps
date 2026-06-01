@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ferdor Addons - AD Block Total</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+h1 {
+    margin-top: 0;
+}
+
+.code {
+    background: #020617;
+    padding: 10px;
+    border-radius: 8px;
+    font-family: monospace;
+    margin-top: 10px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.install {
+    background: #22c55e;
+    color: white;
+}
+
+.back {
+    background: #334155;
+    color: white;
+    margin-left: 10px;
+}
+
+.steps {
+    margin-top: 20px;
+    background: #020617;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.steps ol {
+    padding-left: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="card">
+
+        <h1>AD Block Total</h1>
+
+        <p><strong>Nome in codice:</strong></p>
+        <div class="code">yowza</div>
+
+        <p><strong>Descrizione:</strong></p>
+        <p>Blocca TOTALMENTE Annunci</p>
+
+        <button class="install" onclick="installAddon()">Installa</button>
+        <button class="back" onclick="goBack()">Indietro</button>
+
+        <div class="steps">
+            <h3>Come fare</h3>
+            <p><strong>Come installare AD Block Total:</strong></p>
+            <ol>
+                <li>Vai nella cartella &lt;tuoutente&gt;/.FerdorBrowser (se in futuro userai Ferdor Beta &lt;tuoutente&gt;/.FerdorBeta)</li>
+                <li>Scarica il file <b>yowza.plu</b> cliccando sul tasto in alto e copialo</li>
+                <li>Incollalo nella cartella del Passaggio 1</li>
+                <li>Se è aperto, chiudi e riapri Ferdor</li>
+            </ol>
+        </div>
+
+    </div>
+</div>
+
+<script>
+function installAddon() {
+    // cambia il link con quello reale
+    window.location.href = "https://demenigeco.github.io/dsapps/service/FerdorPluginsDownload/yowza.plu";
+}
+
+function goBack() {
+    window.location.href = "https://demenigeco.github.io/dsapps/program-pages/ferdor-addons/";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+<script>
+window.onload = function () {
+    let searchItem = localStorage.getItem("DSAPPSAuth");
+
+    if (searchItem) {
+        window.location.href = "profile.html";
+    } else {
+        window.location.href = "auth.html?next=/dsapps/auth/";
+    }
+};
+</script>

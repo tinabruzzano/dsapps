@@ -1,0 +1,16 @@
+[
+    {
+        "stars": 5,
+        "id": 0,
+        "title": "Fantastico!",
+        "description": "velocissimo e completo. Lo uso ogni giorno, super consigliato! (Anche se molto instabile)"
+    },
+
+    {
+        "stars": 3,
+        "id": 1,
+        "title": "Molto Buono",
+        "description": "Mi piace molto, è leggero e facile da usare, ma alcune funzionalità avanzate potrebbero essere migliorate."
+    }
+    
+]

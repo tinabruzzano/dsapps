@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DomePrograms Changelog</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#111827;
+    color:white;
+}
+
+header{
+    text-align:center;
+    padding:40px;
+    font-size:32px;
+    font-weight:bold;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+#content{
+    background:#1f2937;
+    padding:20px;
+    border-radius:12px;
+    line-height:1.7;
+}
+
+/* Stile GitHub-like */
+#content h1, 
+#content h2, 
+#content h3{
+    color:#60a5fa;
+}
+
+#content details{
+    background:#111827;
+    border:1px solid #374151;
+    border-radius:10px;
+    padding:10px;
+    margin:10px 0;
+}
+
+#content summary{
+    cursor:pointer;
+    font-weight:bold;
+    color:#e5e7eb;
+}
+
+#content ul{
+    margin-top:10px;
+}
+
+#content li{
+    color:#cbd5e1;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    font-size:14px;
+    color:#9ca3af;
+}
+</style>
+</head>
+
+<body>
+
+<header>📜 DomePrograms Changelog</header>
+
+<div class="container">
+    <div id="content">Caricamento...</div>
+</div>
+
+<footer>
+DomePrograms<br>
+</footer>
+
+<!-- Marked.js -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<script>
+const url = "https://raw.githubusercontent.com/DeMENIGECO/dsapps/main/CHANGELOG.md";
+
+fetch(url)
+    .then(res => res.text())
+    .then(md => {
+        // IMPORTANT: lascia HTML come <details>
+        marked.setOptions({
+            mangle: false,
+            headerIds: false
+        });
+
+        document.getElementById("content").innerHTML = marked.parse(md);
+    })
+    .catch(() => {
+        document.getElementById("content").innerHTML =
+            "Errore nel caricamento del changelog.";
+    });
+</script>
+
+</body>
+</html>
