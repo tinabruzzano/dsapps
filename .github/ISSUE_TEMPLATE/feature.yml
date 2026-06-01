@@ -1,0 +1,59 @@
+name: Feature Request
+description: Suggerisci una nuova funzionalità per DomePrograms
+title: "[FEATURE] "
+labels:
+  - enhancement
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Grazie per aver contribuito a migliorare DomePrograms!
+
+  - type: input
+    id: area
+    attributes:
+      label: Area dello store
+      description: Dove dovrebbe essere aggiunta la funzionalità?
+      placeholder: es. Home, Store, Ricerca, Pagina app, Profilo
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema o bisogno
+      description: Quale problema risolve questa feature?
+      placeholder: Es. è difficile trovare app...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Soluzione proposta
+      description: Descrivi la tua idea
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative considerate
+      description: Ci sono altri modi per risolvere il problema?
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Informazioni aggiuntive
+      description: Screenshot, esempi o dettagli extra
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priorità
+      options:
+        - Bassa
+        - Media
+        - Alta
+        - Importantissima 🚨
