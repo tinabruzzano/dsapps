@@ -1,0 +1,27 @@
+name: Apps Auto Comment
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  comment-on-apps:
+    if: github.event.label.name == 'apps'
+    runs-on: ubuntu-latest
+
+    permissions:
+      issues: write
+
+    steps:
+      - name: Add comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issueNumber = context.issue.number;
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+              body: "Grazie per averci inviato la tua app! DomePrograms la sta analizzando e ti informeremo di tutto."
+            });
