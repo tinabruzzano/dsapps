@@ -60,5 +60,5 @@ Per la API JS di DomePrograms, i moduli sono tanti e non possiamo documentare tu
 Potete trovare le funzioni nel file `README.md` per le funzioni dei file di una categoria.
 
 - [Di `app`](https://demenigeco.github.io/dsapps/api/app/)
-  [(Di `css`](https://demenigeco.github.io/dsapps/api/css/)
+- [Di `css`](https://demenigeco.github.io/dsapps/api/css/)
 - [Di `auth`](https://demenigeco.github.io/dsapps/api/auth/)
