@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>DomePrograms OAuth</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#0f0f0f;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+/* BOX LOGIN */
+.box{
+    background:#1a1a1a;
+    padding:30px;
+    border-radius:18px;
+    width:320px;
+    border:2px solid #2d2d2d;
+}
+
+h1{
+    text-align:center;
+    color:#00a2ff;
+    margin-bottom:25px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-bottom:12px;
+    border:none;
+    border-radius:10px;
+    background:#2b2b2b;
+    color:white;
+    box-sizing:border-box;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    margin-top:8px;
+}
+
+.login{ background:#00a2ff; color:white; }
+.register{ background:#2d2d2d; color:white; }
+
+#error{
+    color:#ff4b4b;
+    margin-top:12px;
+    text-align:center;
+    font-size:14px;
+}
+
+/* POPUP */
+.popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.85);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+
+.popup-box{
+    background:#1a1a1a;
+    padding:25px;
+    border-radius:14px;
+    width:340px;
+    text-align:center;
+    border:2px solid #2d2d2d;
+}
+
+.popup-box h2{
+    color:#ffcc00;
+    margin-bottom:10px;
+}
+
+.popup-box p{
+    font-size:14px;
+    color:#cbd5e1;
+    margin-bottom:20px;
+}
+
+.popup-box button{
+    background:#00a2ff;
+    color:white;
+}
+</style>
+</head>
+
+<body>
+
+<!-- POPUP OAUTH -->
+<div id="oauthPopup" class="popup">
+    <div class="popup-box">
+        <h2>⚠️ DomePrograms OAuth</h2>
+        <p id="popupText"></p>
+        <button onclick="acceptOAuth()">Accetto</button>
+    </div>
+</div>
+
+<!-- LOGIN BOX -->
+<div class="box">
+    <h1>DomePrograms OAuth</h1>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+
+    <button class="login" onclick="login()">Accedi</button>
+    <button class="register" onclick="registerUser()">Registrati</button>
+
+    <div id="error"></div>
+</div>
+
+<script>
+const BLOCKED_LIST = ["hacker", "blockeduser"];
+
+const params = new URLSearchParams(window.location.search);
+const next = params.get("next") || "/";
+
+let oauthAccepted = false;
+
+/* POPUP INIT */
+function initPopup(){
+    document.getElementById("popupText").innerText =
+        "Il sito (" + next + ") sta usando la DomePrograms OAuth tramite API. " +
+        "Non siamo responsabili di come vengono usati i tuoi dati.";
+}
+
+/* ACCETTA OAUTH */
+function acceptOAuth(){
+    oauthAccepted = true;
+    document.getElementById("oauthPopup").style.display = "none";
+}
+
+/* TOKEN */
+function generateToken(username){
+    return btoa(username + "-" + Date.now());
+}
+
+/* SALVA AUTH */
+function saveAuth(username){
+    const token = generateToken(username);
+
+    localStorage.setItem("DSAPPSAuth", JSON.stringify({
+        user: username,
+        token: token
+    }));
+
+    return token;
+}
+
+/* REDIRECT */
+function redirect(token){
+    const url = new URL(next);
+    url.searchParams.set("token", token);
+    window.location.href = url.toString();
+}
+
+/* LOGIN */
+function login(){
+    if(!oauthAccepted){
+        document.getElementById("error").innerText =
+            "Devi accettare l'OAuth prima di continuare.";
+        return;
+    }
+
+    const username = document.getElementById("username").value;
+    const error = document.getElementById("error");
+
+    if(BLOCKED_LIST.includes(username.toLowerCase())){
+        error.innerText = "Utente bloccato.";
+        return;
+    }
+
+    const token = saveAuth(username);
+    redirect(token);
+}
+
+/* REGISTER */
+function registerUser(){
+    if(!oauthAccepted){
+        document.getElementById("error").innerText =
+            "Devi accettare l'OAuth prima di continuare.";
+        return;
+    }
+
+    const username = document.getElementById("username").value;
+
+    const token = saveAuth(username);
+    redirect(token);
+}
+
+/* INIT */
+initPopup();
+</script>
+
+</body>
+</html>
