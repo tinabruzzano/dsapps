@@ -12,7 +12,7 @@ Versione modulo: 26.0
 Scopo: aggiunge il CSS di DomePrograms
 */
 
-function AddHomeCSS {
+function AddHomeCSS() {
   const link = document.createElement("link");
   
   link.rel = "stylesheet";
