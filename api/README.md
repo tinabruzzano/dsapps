@@ -16,13 +16,13 @@ Ogni modulo ha una sua versione e la API è scritta in JavaScript, che permette 
 Per importarlo, in HTML dovreste usare:
 
 ```html
-<script scr="https://demenigeco.github.io/dsapps/api/categoria/modulo.js">
+<script src="https://demenigeco.github.io/dsapps/api/categoria/modulo.js">
 ```
 
 Ad esempio:
 
 ```html
-<script scr="https://demenigeco.github.io/dsapps/api/app/get-app-page.js">
+<script src="https://demenigeco.github.io/dsapps/api/app/get-app-page.js">
 ```
 
 Ma se lo volete importare via JS, dovrete fare:
