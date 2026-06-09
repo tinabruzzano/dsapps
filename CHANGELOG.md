@@ -1,6 +1,14 @@
 # DomePrograms Changelog
 
 ## 3
+<details>
+  <summary>3.4.2 Beta 0</summary>
+
+  **Questa è una Pre-Release:** non verranno mostrate per gli utente queste nuove funzionalità finche non esce la stabile.
+
+  - Pagina per vedere License e Privacy Programmi
+  - Aggiornamento license programmi: aggiunta privacy
+</details>
 
 <details>
   <summary>3.4.1</summary>

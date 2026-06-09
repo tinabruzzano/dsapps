@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy e Licenze</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#111827;
+    color:white;
+}
+
+header{
+    text-align:center;
+    padding:40px;
+    font-size:32px;
+    font-weight:bold;
+}
+
+.container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    padding:20px;
+}
+
+.card{
+    background:#1f2937;
+    color:white;
+    text-decoration:none;
+    padding:20px;
+    border-radius:12px;
+    width:220px;
+    text-align:center;
+    transition:0.2s;
+}
+
+.card:hover{
+    background:#374151;
+    transform:scale(1.05);
+}
+
+.viewer{
+    max-width:900px;
+    margin:30px auto;
+    background:#1f2937;
+    padding:20px;
+    border-radius:12px;
+    white-space:pre-wrap;
+    display:none;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#9ca3af;
+}
+</style>
+</head>
+<body>
+
+<header>Privacy e Licenze</header>
+
+<div id="program-list">
+<div class="container">
+
+<a class="card" href="?pid=ferdor">
+<h3>Ferdor</h3>
+<p>Privacy e Licenza</p>
+</a>
+
+<a class="card" href="?pid=ferdor-beta">
+<h3>Ferdor Beta</h3>
+<p>Privacy e Licenza</p>
+</a>
+
+<a class="card" href="?pid=tonder">
+<h3>Tonder</h3>
+<p>Privacy e Licenza</p>
+</a>
+
+</div>
+</div>
+
+<div id="license-viewer" class="viewer">
+Caricamento...
+</div>
+
+<footer>DomePrograms</footer>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const pid = params.get("pid");
+
+if(pid){
+
+    document.getElementById("program-list").style.display = "none";
+
+    const viewer = document.getElementById("license-viewer");
+    viewer.style.display = "block";
+
+    fetch(`program-licenses/LICENSE.${pid}`)
+    .then(r => {
+        if(!r.ok) throw new Error();
+        return r.text();
+    })
+    .then(text => {
+        viewer.textContent = text;
+    })
+    .catch(() => {
+        viewer.textContent =
+        "Licenza o Privacy non trovata per il programma: " + pid;
+    });
+
+}
+</script>
+
+</body>
+</html>
